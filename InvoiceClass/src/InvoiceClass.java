@@ -7,6 +7,7 @@ public class InvoiceClass {
 		//Creates Scanner Object and variables
 				Scanner keyboard = new Scanner(System.in);
 				InvoiceCalc invoice = new InvoiceCalc();
+				PricesDb product = new PricesDb();
 				String choice="go";
 				double exit;
 				double tax;
@@ -20,11 +21,19 @@ public class InvoiceClass {
 				//Gets and sets tax
 				System.out.println("Enter tax as decimal");
 				tax= keyboard.nextDouble();
+				System.out.println("Current product ids are:"
+						+ "\nJava1001"
+						+ "\nJava1002"
+						+ "\nOrcl1003"
+						+ "\nPython1004"
+						+ "\nZombie1005"
+						+ "\nRasp1006");
 				
 			try{	//enters values into array
 				while(choice.equals("go")||choice.equals("Yes")){
 					System.out.println("Enter next product");
-					myPrices[counter]= keyboard.nextDouble();
+					product.getProduct(keyboard.nextLine());
+					myPrices[counter]= invoice.getPrice();
 					counter+=1;
 					System.out.println("Would you like to enter more prices? Yes or No");
 					choice=keyboard.next();

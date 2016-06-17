@@ -9,7 +9,7 @@ private static String sku=" ";
 		sku = s;
 	}
 	
-	public static InvoiceCalc getProduct(String s){
+	public InvoiceCalc getProduct(String s){
 		
 			String sku=s;
 			InvoiceCalc b = new InvoiceCalc();
