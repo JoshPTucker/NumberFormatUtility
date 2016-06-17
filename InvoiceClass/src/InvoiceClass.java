@@ -6,7 +6,7 @@ public class InvoiceClass {
 
 		//Creates Scanner Object and variables
 				Scanner keyboard = new Scanner(System.in);
-				InvoiceCalc ivoice = new InvoiceCalc();
+				InvoiceCalc invoice = new InvoiceCalc();
 				String choice="go";
 				double exit;
 				double tax;
