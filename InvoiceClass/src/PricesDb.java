@@ -1,18 +1,19 @@
 
 public class PricesDb {
-private static String sku=" ";
+
 	
-	public  String getSKU(){
-		return sku;
-	}
-	public static void setSKU(String s){
-		sku = s;
-	}
-	
-	public InvoiceCalc getProduct(String s){
+//	public  String getSKU(){
+//		return sku;
+//	}
+//	public static void setSKU(String s){
+//		sku = s;
+//	}
+	//private static String sku;	
+	public static InvoiceCalc getProduct(String s){
 		
+		InvoiceCalc b = new InvoiceCalc();
 			String sku=s;
-			InvoiceCalc b = new InvoiceCalc();
+			
 			
 			b.setTitle(sku);
 				if (sku.equals("Java1001")){
@@ -58,7 +59,11 @@ private static String sku=" ";
 					b.setPrice(14.75);
 					b.setTitle("Raspberry Pi Projects for the Evil Genius");
 					
-				}				
+				}
+				b.getAuthor();
+				b.getDescription();
+				b.getPrice();
+				b.getTitle();
 				return b;
 	}
 }

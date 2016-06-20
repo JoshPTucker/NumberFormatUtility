@@ -46,4 +46,5 @@ public class InvoiceCalc {
 			this.price=price;
 	
  }
+		
 }

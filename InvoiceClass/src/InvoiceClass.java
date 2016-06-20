@@ -1,4 +1,5 @@
 import java.util.Scanner; 
+
 public class InvoiceClass {
 
 	public static void main(String[] args) {
@@ -6,9 +7,11 @@ public class InvoiceClass {
 
 		//Creates Scanner Object and variables
 				Scanner keyboard = new Scanner(System.in);
-				InvoiceCalc invoice = new InvoiceCalc();
 				PricesDb product = new PricesDb();
+				//InvoiceCalc invoice = new InvoiceCalc();
+				
 				String choice="go";
+				String choice2=" ";
 				double exit;
 				double tax;
 				double subtotal=0;
@@ -32,9 +35,11 @@ public class InvoiceClass {
 			try{	//enters values into array
 				while(choice.equals("go")||choice.equals("Yes")){
 					System.out.println("Enter next product");
-					product.getProduct(keyboard.nextLine());
-					myPrices[counter]= invoice.getPrice();
+					choice2=keyboard.next();
+					
+					myPrices[counter]= PricesDb.getProduct(choice2).getPrice();
 					counter+=1;
+					
 					System.out.println("Would you like to enter more prices? Yes or No");
 					choice=keyboard.next();
 				}
