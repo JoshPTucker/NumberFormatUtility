@@ -1,10 +1,12 @@
 
+
 /*
- * 
+ * Joshua Tucker
  */
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
+//import java.util.*;
 
 public class DisplayCalendar {
 
@@ -15,16 +17,16 @@ public class DisplayCalendar {
 		int year;
 		int daysInMonth = 0;
 		String monthName;
-		int dayDisplay[][] = new int[7][5];
+		int dayDisplay[][] = new int[5][7];
 		//0-11
 		//String months[] = {" ","Jan","Feb","Mar","Apr","May","Jun",
 		//		"Jul","Aug","Sep","Oct","Nov","Dec"};
 		
 		//0-6
-		String weekDays[]={"S","M","T","W","T","F","S" };
+		String weekDays[]={"Sun","Mon","Tues","Wed","Thur","Fri","Sat" };
 		
 		System.out.println("Enter the month number");
-		month=keyboard.nextInt();
+		month=keyboard.nextInt()-1;
 		System.out.println("Enter the year");
 		year= keyboard.nextInt();
 		keyboard.close();
@@ -60,15 +62,32 @@ public class DisplayCalendar {
 		break;
 		}
 		int weekCount=0;
-		int startDay = gc.get(Calendar.DAY_OF_WEEK)- 1;
+		int startDay = gc.get(Calendar.DAY_OF_WEEK)-1;
+	
+		
 		System.out.println(monthName+" "+year);
 		System.out.println(daysInMonth);
 	   for(int i=0; i<7; i++) {
 		   System.out.print(weekDays[i]+" ");
 	   }
-	   for(int i=1; i<daysInMonth; i++){
-		   for()
+	   
+	  // System.out.println("startDay="+startDay);
+	   int k=1;
+	     for (int w=0;w<5;w++){
+		    for (int d=startDay;d<7;d++ ){
+			   dayDisplay[w][d]=k;
+			   k++;
+		   }
+		   startDay=0;
 	   }
+	     for (int w=0;w<5;w++){
+			   System.out.println();
+			   for (int d=0;d<7;d++ ){
+			System.out.print(dayDisplay[w][d]+"  ");
+				  
+			   }
+			   
+		   }
 	
 //	   for(int i=0;i<daysInMonth;i++){
 //		   dayDisplay[startDay][weekCount]=i;
@@ -78,19 +97,19 @@ public class DisplayCalendar {
 //		   }
 //		  startDay+=1;  
 //	   }
-//	    weekCount=0;
+//	    weekCount=1;
 //	    startDay = 0;
-	    System.out.println();
-	for(int j=0;j<daysInMonth;j++){
-			  System.out.print(dayDisplay[startDay][weekCount]+" ");
-			  
-			   if (startDay==6){
-				   startDay=0;
-				   weekCount++;
-				   System.out.println();
-			   }  
-			    startDay++;
-		}
-	weekCount=0;
+//	    System.out.println();
+//	for(int j=0;j<daysInMonth;j++){
+//			  System.out.print(dayDisplay[startDay][weekCount]+" ");
+//			  
+//			   if (startDay==6){
+//				   startDay=0;
+//				   weekCount++;
+//				   System.out.println();
+//			   }  
+//			    startDay++;
+//		}
+//	weekCount=0;
 	}
 }
