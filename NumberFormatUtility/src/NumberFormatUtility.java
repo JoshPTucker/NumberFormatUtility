@@ -1,8 +1,9 @@
 import java.text.NumberFormat;
+import java.util.Random;
 
 public class NumberFormatUtility {
 
-		
+		static Random rand=new Random();
 
 		public static String toPercentage(double in){
 			
@@ -19,7 +20,7 @@ public class NumberFormatUtility {
 			int deci=places;
 			NumberFormat number = NumberFormat.getNumberInstance();
 
-			number.setMaximumFractionDigits(2);
+			number.setMaximumFractionDigits(deci);
 
 			String numb1String = number.format(numb1);
 			return numb1String;
@@ -34,8 +35,8 @@ public class NumberFormatUtility {
 			
 			return priceString;
 		}
-		public static  randNum(){
-			
+		public static int  randNum(){
+			return rand.nextInt();
 		}
 		public static int maxNum(int numb1, int numb2){
 		int n1=numb1;
