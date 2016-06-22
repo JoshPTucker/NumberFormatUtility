@@ -36,7 +36,7 @@ public class NumberFormatUtility {
 			return priceString;
 		}
 		public static int  randNum(){
-			return rand.nextInt();
+			return rand.nextInt()+1;
 		}
 		public static int maxNum(int numb1, int numb2){
 		int n1=numb1;
@@ -44,16 +44,16 @@ public class NumberFormatUtility {
 		if(n1>n2){
 			return n1;
 		}
-		else return 0;
+		else return n2;
 				
 		}
 		public static int minNum(int numb1, int numb2){
 			int n1=numb1;
 			int n2=numb2;
-			if(n2>n1){
-				return n1;
+			if(n1>n2){
+				return n2;
 			}
-			else return 0;
+			else return n1;
 			
 			
 		}
